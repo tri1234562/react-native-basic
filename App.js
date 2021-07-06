@@ -13,10 +13,15 @@ import {
   Text,
   useColorScheme,
   View,
+  Button,
 } from 'react-native';
 
-import {Colors} from 'react-native/Libraries/NewAppScreen';
-
+import { Colors } from 'react-native/Libraries/NewAppScreen';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import LoginScreen from './src/screen/home';
+import OnBoardingScreen from './src/screen/onboarding';
+import SignUpScreen from './src/screen/singup';
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
@@ -25,13 +30,19 @@ const App = () => {
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <View style={styles.textCenter}>
-        <Text style={styles.redText}>Hello World</Text>
-      </View>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Onboarding">
+        <Stack.Screen name="Onboarding" component={OnBoardingScreen} />
+       <Stack.Screen name="Login" component={LoginScreen} />
+       <Stack.Screen name="Signup" component={SignUpScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
+
+
+
+const Stack = createStackNavigator();
 
 const styles = StyleSheet.create({
   textCenter: {
