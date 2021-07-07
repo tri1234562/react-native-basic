@@ -7,41 +7,17 @@
  */
 
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import { Provider } from 'react-redux';
 
-import {Colors} from 'react-native/Libraries/NewAppScreen';
+import DashBoard from './src/screens/DashBoard';
+import store from './src/store';
 
 const App = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <View style={styles.textCenter}>
-        <Text style={styles.redText}>Hello World</Text>
-      </View>
-    </SafeAreaView>
+    <Provider store={store}>
+      <DashBoard />
+    </Provider>
   );
 };
-
-const styles = StyleSheet.create({
-  textCenter: {
-    height: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  redText: {
-    color: 'red',
-  },
-});
 
 export default App;
