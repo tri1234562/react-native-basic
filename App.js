@@ -7,11 +7,10 @@
  */
 
 import React from 'react';
-import { Text, View } from 'react-native';
 import { Provider } from 'react-redux';
 
 import DashBoard from './src/screens/DashBoard';
-import store from './store';
+import store from './src/store';
 
 const App = () => {
   return (

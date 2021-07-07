@@ -1,26 +1,52 @@
 import React from 'react';
-import { View, SafeAreaView, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import {
+  View,
+  SafeAreaView,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+} from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
-import { handleChangeData } from '../../data/testSaga/testActions'
+import {
+  increaseAction,
+  decreaseAction,
+  resetCountAction,
+} from '../../store/actions';
 
 const DashBoard = () => {
-  const data = useSelector(state => state.testReducer)
-  const dispatch = useDispatch()
-  const { content, name, count } = data
-  const newCount = count + 1
+  const data = useSelector((state) => state.testReducer);
+  const dispatch = useDispatch();
+  const { content, name, count } = data;
   return (
     <SafeAreaView style={styles.backgroundStyle}>
       <View style={styles.textCenter}>
-        <Text style={styles.redText}>name: {name}</Text>
-        <Text style={styles.redText}>text: {content}</Text>
         <Text style={styles.redText}>count: {count}</Text>
-        <TouchableOpacity style={styles.btn} onPress={() => {dispatch(handleChangeData({
-          name: "New Name",
-          content: "Hello React-native App",
-          count: newCount,
-        }))}}>
-          <Text>Click To Change Content</Text>
-        </TouchableOpacity>
+        <View style={styles.btns}>
+          <TouchableOpacity
+            style={styles.btn}
+            onPress={() => {
+              dispatch(increaseAction());
+            }}
+          >
+            <Text>Increase Count</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.btn}
+            onPress={() => {
+              dispatch(decreaseAction());
+            }}
+          >
+            <Text>Decrease Count</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.btn}
+            onPress={() => {
+              dispatch(resetCountAction({ count: 0 }));
+            }}
+          >
+            <Text>Reset Count</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </SafeAreaView>
   );
@@ -28,7 +54,7 @@ const DashBoard = () => {
 
 const styles = StyleSheet.create({
   backgroundStyle: {
-    backgroundColor: 'white'
+    backgroundColor: 'white',
   },
   textCenter: {
     height: '100%',
@@ -38,11 +64,15 @@ const styles = StyleSheet.create({
   redText: {
     color: 'red',
   },
+  btns: {
+    flexDirection: 'row',
+  },
   btn: {
     backgroundColor: '#30BE76',
     alignItems: 'center',
     padding: 10,
     borderRadius: 8,
+    marginLeft: 10,
     marginTop: 10,
     marginBottom: 20,
   },
