@@ -1,23 +1,22 @@
 import { put } from 'redux-saga/effects';
 import { INCREASE_DATA_SUCCESS, DECREASE_DATA_SUCCESS, RESET_DATA_SUCCESS } from '../actionsType'
+import { makeActionCreator } from '../ultis'
 
  function* handleUpdateData(data) {
   try {
     console.log('action INCREASE_DATA_REQUEST run', data);
-    yield put({
-      type: INCREASE_DATA_SUCCESS,
-      payload: {...data.payload},
-    });
+    yield put(
+      makeActionCreator(INCREASE_DATA_SUCCESS)(data.payload)
+    );
   } catch (error) {}
 }
 
 function* handleDecreaseCount(data) {
   try {
     console.log('action DECREASE_DATA_SUCCESS run');
-    yield put({
-      type: DECREASE_DATA_SUCCESS,
-      payload: {...data.payload},
-    });
+    yield put(
+      makeActionCreator(DECREASE_DATA_SUCCESS)(data.payload)
+    );
   } catch (error) {}
 }
 
@@ -25,10 +24,9 @@ function* handleDecreaseCount(data) {
 function* handleResetCount(data) {
   try {
     console.log('action RESET_DATA_SUCCESS run', data);
-    yield put({
-      type: RESET_DATA_SUCCESS,
-      payload: {...data.payload},
-    });
+    yield put(
+      makeActionCreator(RESET_DATA_SUCCESS)(data.payload)
+    );ß
   } catch (error) {}
 }
 
