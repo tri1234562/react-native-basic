@@ -1,17 +1,15 @@
 import * as React from "react";
 import { Button, View, Text } from "react-native";
 import styles from "./OnboardingStyles";
-import { withNavigation } from 'react-navigation';
+// import { useNavigation } from "@react-navigation/core";
 
-const OnboardingView = ({ navigation }) => {
+const OnboardingView = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Text>Onboarding Screen</Text>
       <Button
         title="Go to Login Screen"
-        onPress={() => {
-         navigation.navigate("Login");
-        }}
+        onPress={() => navigation.navigate("Login")}
       />
     </View>
   );

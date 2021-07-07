@@ -20,9 +20,8 @@ import { Colors } from "react-native/Libraries/NewAppScreen";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import OnboardingScreen from "./src/screens/Onboarding";
-import LoginScreen from "./src/screens/LoginScreen";
-import SignUpScreen from "./src/screens/SingupScreen";
-
+import LoginScreen from "./src/screens/Login";
+import SignUpScreen from './src/screens/SignUp'
 const App = () => {
   const isDarkMode = useColorScheme() === "dark";
 
