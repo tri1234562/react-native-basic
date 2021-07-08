@@ -15,11 +15,13 @@ import {
   View,
   Button,
 } from "react-native";
+import { Provider } from 'react-redux';
+import DashBoard from './src/screens/DashBoard';
+import store from './src/store';
 
 import { Colors } from "react-native/Libraries/NewAppScreen";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import OnboardingScreen from "./src/screens/Onboarding";
 import LoginScreen from "./src/screens/Login";
 import SignUpScreen from './src/screens/SignUp'
 const App = () => {
@@ -30,13 +32,15 @@ const App = () => {
   };
 
   return (
-    <NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
       <Stack.Navigator initialRouteName="Onboarding">
-        <Stack.Screen name="Onboarding" component={OnboardingScreen} />
+        <Stack.Screen name="Onboarding" component={DashBoard} />
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Signup" component={SignUpScreen} />
       </Stack.Navigator>
     </NavigationContainer>
+    </Provider>
   );
 };
 
