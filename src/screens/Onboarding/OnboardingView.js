@@ -9,9 +9,9 @@ const OnboardingView = ({navigation}) => {
       <Text>Onboarding Screen</Text>
       <Button
         title="Go to Login Screen"
-        onPress={() => navigation.navigate("Login")}
+        onPress={() => navigation.replace("Login")}
       />
-    </View>
+    </View>   
   );
 };
 

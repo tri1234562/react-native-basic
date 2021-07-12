@@ -20,7 +20,9 @@ const DashBoard = () => {
   return (
     <SafeAreaView style={styles.backgroundStyle}>
       <View style={styles.textCenter}>
-        <Text style={styles.redText}>count: {count}</Text>
+        <Text style={styles.redText}>
+          count: {count}
+        </Text>
         <View style={styles.btns}>
           <TouchableOpacity
             style={styles.btn}
@@ -28,7 +30,9 @@ const DashBoard = () => {
               dispatch(increaseAction());
             }}
           >
-            <Text>Increase Count</Text>
+            <Text>
+              Increase Count
+            </Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.btn}
@@ -36,7 +40,9 @@ const DashBoard = () => {
               dispatch(decreaseAction());
             }}
           >
-            <Text>Decrease Count</Text>
+            <Text>
+              Decrease Count
+            </Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.btn}
@@ -44,7 +50,9 @@ const DashBoard = () => {
               dispatch(resetCountAction({ count: 0 }));
             }}
           >
-            <Text>Reset Count</Text>
+            <Text>
+              Reset Count
+            </Text>
           </TouchableOpacity>
         </View>
       </View>
