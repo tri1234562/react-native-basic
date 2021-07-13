@@ -35,8 +35,12 @@ const App = () => {
     <Provider store={store}>
       <NavigationContainer>
         <Stack.Navigator initialRouteName='Onboarding'>
-          <Stack.Screen name='Onboarding' component={DashBoard} />
-          <Stack.Screen name='Login' component={LoginScreen} />
+          <Stack.Screen
+            name='Onboarding'
+            component={DashBoard} />
+          <Stack.Screen
+            name='Login'
+            component={LoginScreen} />
           <Stack.Screen
             name='Signup'
             component={SignUpScreen}

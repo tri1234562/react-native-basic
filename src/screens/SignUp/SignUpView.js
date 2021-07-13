@@ -34,8 +34,8 @@ const TextInputForm = ({
       <TextInput
         style={[
           styles.inputField,
-          error !== '' ? styles.inputError :
-            value === '' ? styles.inputEmpty : styles.inputSuccess
+          error !== '' && styles.inputError,
+          value !== '' && error === '' && styles.inputSuccess
         ]}
         value={value}
         secureTextEntry={secureTextEntry}
@@ -66,30 +66,27 @@ const SignUpView = ({
   passwordError,
   passwordValidator,
   onChangePassword,
-  onSubmit,
-  toLogIn
+  signUp,
+  navigateToLogIn,
 }) => {
   return (
     <ScrollView style={styles.container}>
       <KeyboardAvoidingView
         style={styles.content}
-        behavior='position'
-        keyboardVerticalOffset={30}>
-        <View style={styles.header}>
-          <ImageBackground
-            source={backgroundImage}
-            resizeMode='cover'
-            style={styles.image}
-          >
-            <Image
-              source={logo}
-              style={styles.logoImage}
-            />
-            <Text style={styles.pageTitle}>
-              {'Start\nfrom Scratch'}
-            </Text>
-          </ImageBackground>
-        </View>
+        behavior='position' >
+        <ImageBackground
+          style={styles.backgroundImage}
+          imageStyle={styles.image}
+          source={backgroundImage}
+        >
+          <Image
+            source={logo}
+            style={styles.logoImage}
+          />
+          <Text style={styles.pageTitle}>
+            {'Start\nfrom Scratch'}
+          </Text>
+        </ImageBackground>
         <View style={styles.formContainer}>
           <Text style={styles.formTitle}>
             Create account to continue
@@ -121,12 +118,20 @@ const SignUpView = ({
           />
         </View>
         <View style={styles.actionsContainer}>
-          <TouchableOpacity style={styles.submit} onPress={onSubmit}>
-            <Text style={styles.submitText}>Create Account</Text>
+          <TouchableOpacity
+            style={styles.submit}
+            onPress={signUp}>
+            <Text style={styles.submitText}>
+              Create Account
+            </Text>
           </TouchableOpacity>
-          <Text style={styles.inputLabel}>Already have an account?</Text>
-          <TouchableWithoutFeedback onPress={toLogIn}>
-            <Text style={styles.textBtn}>Login Here</Text>
+          <Text style={styles.inputLabel}>
+            Already have an account?
+          </Text>
+          <TouchableWithoutFeedback onPress={navigateToLogIn}>
+            <Text style={styles.textBtn}>
+              Login Here
+            </Text>
           </TouchableWithoutFeedback>
         </View>
       </KeyboardAvoidingView>

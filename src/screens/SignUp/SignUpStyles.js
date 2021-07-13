@@ -1,9 +1,9 @@
-import { Dimensions, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 const Colors = {
     primary: '#30BE76',
     background: 'white',
-    divider:'#CCC',
+    divider: '#CCC',
     error: '#B00020',
     success: '#6200EE',
     dark: '#030F09',
@@ -13,35 +13,38 @@ const Colors = {
 
 export default StyleSheet.create({
     container: {
+        flexDirection: 'column',
         flex: 1,
         backgroundColor: Colors.background,
     },
     content: {
         flex: 1,
     },
-    header: {
-        height: Dimensions.get('window').height * 0.3,
-        alignItems: 'center',
-    },
     pageTitle: {
         marginLeft: 25,
         fontSize: 24,
-        fontWeight:'bold',
+        fontWeight: 'bold',
         fontFamily: 'Nunito',
     },
-    image: {
-        height: '100%',
+    backgroundImage: {
+        flex: 1,
         width: '100%',
         overflow: 'hidden',
         borderBottomRightRadius: 100,
+        paddingBottom: 60,
+    },
+    image: {
+        resizeMode: 'cover',
+        height: '220%',
     },
     logoImage: {
-        marginVertical: 40,
+        marginVertical: 30,
         marginLeft: 25,
         width: 102,
         height: 28,
     },
     formContainer: {
+        flex: 1,
         marginTop: 16,
         paddingHorizontal: 25,
     },
@@ -51,7 +54,7 @@ export default StyleSheet.create({
         fontSize: 14,
     },
     inputContainer: {
-        marginBottom: 30,
+        marginBottom: 20,
     },
     inputLabel: {
         color: Colors.fade,
@@ -64,8 +67,6 @@ export default StyleSheet.create({
         fontSize: 16,
         fontFamily: 'Nunito',
         borderBottomWidth: 1,
-    },
-    inputEmpty: {
         borderBottomColor: Colors.divider,
     },
     inputSuccess: {
