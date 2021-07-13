@@ -18,7 +18,7 @@ const OnboardingView = ({}) => {
       />
        <View style={styles.mainContent}> 
        <Image style={styles.image} source={require("../../assets/images/Logo.png")}></Image>
-       <Text style={styles.textStyle}>Scratch</Text>
+       <Text style={styles.textStyle}>scratch</Text>
        </View>
     </View>
   );
