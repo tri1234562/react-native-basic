@@ -23,7 +23,8 @@ import { Colors } from "react-native/Libraries/NewAppScreen";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import LoginScreen from "./src/screens/Login";
-import SignUpScreen from './src/screens/SignUp'
+import SignUpScreen from './src/screens/SignUp';
+import OnboardingScreen from './src/screens/Onboarding';
 const App = () => {
   const isDarkMode = useColorScheme() === "dark";
 
@@ -35,7 +36,7 @@ const App = () => {
     <Provider store={store}>
       <NavigationContainer>
       <Stack.Navigator initialRouteName="Onboarding">
-        <Stack.Screen name="Onboarding" component={DashBoard} />
+        <Stack.Screen name="Onboarding" component={OnboardingScreen} options={{headerShown:false}}/>
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Signup" component={SignUpScreen} />
       </Stack.Navigator>
