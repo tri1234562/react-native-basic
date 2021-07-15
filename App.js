@@ -8,15 +8,10 @@
 
 import React from "react";
 import {
-  SafeAreaView,
   StyleSheet,
-  Text,
   useColorScheme,
-  View,
-  Button,
 } from "react-native";
 import { Provider } from 'react-redux';
-import DashBoard from './src/screens/DashBoard';
 import store from './src/store';
 
 import { Colors } from "react-native/Libraries/NewAppScreen";

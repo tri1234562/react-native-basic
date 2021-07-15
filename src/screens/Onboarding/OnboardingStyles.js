@@ -4,12 +4,11 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "flex-end",
   },
   mainContent: {
-    flex: 1,
+    top: "40%",
     alignItems: "center",
-    justifyContent: "center",
     position: "absolute",
     flexDirection: 'row',
   },
@@ -25,17 +24,11 @@ export default StyleSheet.create({
     height: 36,
   },
   background: {
-    top: "40%",
-    width: '100%',
-    height: "100%",
-    flex: 1,
-    resizeMode: "cover",
-    alignItems: "center",
-    justifyContent: "center",
+    resizeMode: "contain",
   },
   textStyle: {
     padding: 15,
-    fontFamily: 'Nunito-Regular',
     fontSize: 20,
+    fontFamily: 'Nunito-Regular',
   },
 });
