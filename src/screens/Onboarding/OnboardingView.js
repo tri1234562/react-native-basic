@@ -29,7 +29,7 @@ const OnboardingView = ({}) => {
           source={require("../../assets/images/Logo.png")}/>
         <Text style={styles.textStyle}>
           scratch
-          </Text>
+        </Text>
       </View>
     </View>
   );

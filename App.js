@@ -31,7 +31,10 @@ const App = () => {
     <Provider store={store}>
       <NavigationContainer>
       <Stack.Navigator initialRouteName="Onboarding">
-        <Stack.Screen name="Onboarding" component={OnboardingScreen} options={{headerShown:false}}/>
+        <Stack.Screen 
+        name="Onboarding" 
+        component={OnboardingScreen} 
+        options={{headerShown:false}}/>
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Signup" component={SignUpScreen} />
       </Stack.Navigator>
