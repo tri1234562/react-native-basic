@@ -18,9 +18,9 @@ const LoginView = (props) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-        <KeyboardAvoidingView
+        {/* <KeyboardAvoidingView
           behavior={Platform.OS === 'ios' ? 'position' : 'padding'}
-        >
+        > */}
           <ImageBackground
             resizeMode='cover'
             style={styles.backgroundContainer}
@@ -92,7 +92,7 @@ const LoginView = (props) => {
               </View>
             </View>
           </View>
-        </KeyboardAvoidingView>
+        {/* </KeyboardAvoidingView> */}
       </ScrollView>
     </SafeAreaView>
   );

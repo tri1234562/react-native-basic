@@ -64,6 +64,7 @@ const LoginContainer = (props) => {
       );
     }
   };
+  
   const handleNatigateToSignUp = () => {
      props.navigation.replace(SIGN_UP)
   }
